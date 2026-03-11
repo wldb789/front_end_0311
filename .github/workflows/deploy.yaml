@@ -1,0 +1,28 @@
+# 워크플로우 이름 지정
+name: Deploy Frontend to Nginx
+
+# 이벤트 지정 -> 언제 동작하게 할 것이냐?
+on:
+  push:
+    branches:
+      - main
+
+# 이벤트 발생 시 동작해야 할 작업 정의
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+    # Github Actions 워크플로우에서 Nginx 서버로
+    # 복사하기 위한 작업을 실행하는 과정
+      - name: Copy Files to Nginx server
+      - uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PUBLIC_HOST }}
+          username: ${{ secrets.PUBLIC_USER }}
+          key: ${{ secrets.PUBLIC_SSH_KEY }}
+          source: "./*"
+          target: "/var/www/html"
