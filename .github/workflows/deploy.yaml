@@ -23,6 +23,6 @@ jobs:
         with:
           host: ${{ secrets.PUBLIC_HOST }}
           username: ${{ secrets.PUBLIC_USER }}
-          key: ${{ secrets.PUBLIC_SSH_KEY }}
+          key: ${{ secrets.PRIVATE_SSH_KEY }}
           source: "./*"
-          target: "/var/www/html"
+          target: "/var/www/html/front_end_0311"
