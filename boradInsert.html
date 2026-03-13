@@ -17,29 +17,30 @@
         <div class="row">
             <div class="col-12">
 
-                <form>
+                <form name="boardFrm">
                     <div class="mb-3">
                         <label for="title" class="form-label">제목</label>
-                        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+                        <input type="text" class="form-control" name="b_title" placeholder="제목을 입력하세요">
                     </div>
                     <div class="mb-3">
                         <label for="author" class="form-label">작성자</label>
-                        <input type="text" class="form-control" id="writer" placeholder="작성자를 입력하세요">
+                        <input type="text" class="form-control" name="b_writer" placeholder="작성자를 입력하세요">
                     </div>
                     <div class="mb-3">
                         <label for="content" class="form-label">내용</label>
-                        <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
+                        <textarea class="form-control" name="b_content" rows="5" placeholder="내용을 입력하세요"></textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="file" class="form-control" id="file">
+                        <input type="file" class="form-control" name="b_file">
                     </div>
-                    <button type="submit" class="btn btn-primary">등록</button>
+                    <button type="submit" class="btn btn-primary" id="insertBtn">등록</button>
                 </form>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
+            <script src="./assets/js/boardInsert.js"></script>
 </body>
 
 </html>
